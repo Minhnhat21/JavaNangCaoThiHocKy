@@ -36,5 +36,14 @@ public class UserService {
 		return role;
 		
 	}
+	
+	public User getUser(String username, String pass) {
+		User myUser = new User();
+		if(userRepository.checkUs(username, pass) == true) {
+			List<User> listUser = userRepository.findUserByRoleName(username);
+			myUser = listUser.get(0);	
+		}
+		return myUser;
+	}
 
 }

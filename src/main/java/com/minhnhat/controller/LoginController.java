@@ -1,5 +1,8 @@
 package com.minhnhat.controller;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,16 +55,20 @@ public class LoginController {
 	
 	@GetMapping(path = "/register")
 	public String register(@RequestParam String username,
-			@RequestParam String password) {
+			@RequestParam String password, HttpSession session) {
 		String redirectURL = "";
 		String strRole = userService.checkAuth(username,password);
-		if(strRole.trim().equals("ROLE_ADMIN")) {
-			redirectURL = "redirect:/admin/home";
-		} else if(strRole.trim().equals("ROLE_USER")) {
-			redirectURL = "redirect:/student/home";
-		} else {
+		User myUser = userService.getUser(username, password);
+		if(myUser != null) {
+			session.setAttribute("User", myUser);
+			if(strRole.trim().equals("ROLE_ADMIN")) {
+				redirectURL = "redirect:/admin/home";
+			} else if(strRole.trim().equals("ROLE_USER")) {
+				session.setAttribute("User", myUser);
+				redirectURL = "redirect:/student/home";
+			}
+		} else 
 			redirectURL = "redirect:/login/";
-		}
 		return redirectURL;
 	}
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,7 +100,8 @@
     <div class="container" style="height: 1000px">
       <div class="infomation-box row">
         <div class="col-10 col-inf">
-          <div class="table-responsive">
+        <h1> <c:out value="${message}"></c:out> </h1>
+         <%--  <div class="table-responsive">
             <div class="table-wrapper">
               <div class="table-title">
                 <div class="row">
@@ -124,7 +126,7 @@
                 </tbody>
               </table>
             </div>
-          </div>
+          </div> --%>
         </div>
       </div>
     </div>

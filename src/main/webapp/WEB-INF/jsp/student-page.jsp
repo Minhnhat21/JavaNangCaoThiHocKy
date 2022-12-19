@@ -47,7 +47,7 @@
         <header class="topbar" data-navbarbg="skin6">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header" data-logobg="skin6">
-                    <a class="navbar-brand" href="/admin">
+                    <a class="navbar-brand" href="/student/home">
                         <b class="logo-icon">
                             <img src="/images/husc_logo.png" width="45" height="50" alt="homepage" class="dark-logo" />
                         </b>
@@ -110,46 +110,56 @@
                     <div class="col-10 col-inf">
                         <div class="row">
                             <div class="col-6 col-inf">
-                                <strong>Họ và tên: </strong><span> <c:out value="${student}"></c:out>  </span>
+                                <strong>Họ và tên: </strong><span> <c:out value="${student.fullName}"></c:out>  </span>
                             </div>
                             <div class="col-6 col-inf">
-                                <strong>Giới tính:</strong> <span th:text="${studentInformation.student.gender} ? 'Nam' : 'Nữ'" > </span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-6 col-inf">
-                                <strong> Nơi sinh: </strong> <span th:text="${studentInformation.birthPlace}"></span>
-                            </div>
-                            <div class="col-6 col-inf">
-                                <strong>Căn cước công dân: </strong>  <span th:text="${studentInformation.student.citizenIdentity}"> </span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-6 col-inf">
-                                <strong>Quốc tịch: </strong>  <span th:text="${studentInformation.national}"></span>
-                            </div>
-                            <div class="col-6 col-inf">
-                                <strong>Số điện thoại: </strong> <span th:text="${studentInformation.phoneNumber}"></span>
+                      
+                                <strong>Giới tính:</strong> <span> <c:choose>
+													    <c:when test="${student.gender == true}">
+													        Nam 
+													        <br />
+													    </c:when>    
+													    <c:otherwise>
+													       Nữ
+													        <br />
+													    </c:otherwise>
+													</c:choose></span>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-6 col-inf">
-                                <strong>Tôn giáo: </strong>  <span th:text="${studentInformation.religion}"></span>
+                                <strong> Nơi sinh: </strong> <span> <c:out value="${student.birthPlace}"></c:out> </span>
                             </div>
                             <div class="col-6 col-inf">
-                                <strong>Dân tộc: </strong>  <span>Kinh</span>
+                                <strong>Căn cước công dân: </strong>  <span> <c:out value="${student.citizenIdentity}"></c:out> </span>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-6 col-inf">
-                                <strong>Địa chỉ: </strong>  <span th:text="${studentInformation.student.address}" ></span>
+                                 <strong>Quốc tịch: </strong>  <span > <c:out value="${student.national}"></c:out> </span>
                             </div>
                             <div class="col-6 col-inf">
-                                <strong>Email: </strong>  <span th:text="${studentInformation.student.email}" ></span>
+                                <strong>Số điện thoại: </strong> <span > <c:out value="${student.phoneNumber}"></c:out></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 col-inf">
+                                <strong>Tôn giáo: </strong>  <span > <c:out value="${student.religion}"></c:out></span>
+                            </div>
+                            <div class="col-6 col-inf">
+                                <strong>Dân tộc: </strong>  <span><c:out value="${student.religion }"></c:out></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 col-inf">
+                                <strong>Địa chỉ: </strong>  <span><c:out value="${student.address}"></c:out></span>
+                            </div>
+                            <div class="col-6 col-inf">
+                                <strong>Email: </strong>  <span><c:out value="${student.email}"></c:out></span>
                             </div>
                         </div>
 

@@ -178,6 +178,13 @@ public class StudentService {
     	Student s = studentRepository.findStudentByCitizenIdentity(citizenIdentity);
     	return s;
     }
+
+
+	public Student findStudentByUserId(Integer id) {
+		List<Student> students = studentRepository.findStudentByUserId(id);
+		Student student = students.get(0);
+		return student;
+	}
 	
 	
 
