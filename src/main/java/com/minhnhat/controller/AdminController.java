@@ -2,6 +2,7 @@ package com.minhnhat.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ import com.minhnhat.entity.ExamSubject;
 import com.minhnhat.entity.ExamSubjectService;
 import com.minhnhat.entity.MajorsRegister;
 import com.minhnhat.entity.Student;
+import com.minhnhat.entity.account.User;
 import com.minhnhat.exception.StudentNotFoundException;
 import com.minhnhat.payload.request.StudentRequest;
 import com.minhnhat.payload.response.PageInfo;
@@ -37,13 +39,22 @@ import io.swagger.annotations.ApiParam;
 public class AdminController {
 	
 	@GetMapping(path = "/home")
-	public String initPage(Model model) {
-		return "admin-page";
+	public String initPage(Model model, HttpSession session) {
+		User user = (User) session.getAttribute("User");
+		if(user != null) {	
+			return "admin-page";
+		} else
+			return "redirect:/login/";
+		
 	}
 	
 	@GetMapping(path = "/table")
-	public String managerStudentPage(Model model) {
-		return "admin-manager-student";
+	public String managerStudentPage(Model model, HttpSession session) {
+		User user = (User) session.getAttribute("User");
+		if(user != null) {	
+			return "admin-manager-student";
+		} else
+			return "redirect:/login/";
 	}
 	
 	private final StudentService studentService;

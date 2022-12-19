@@ -58,21 +58,24 @@
 
                 </div>
 
-    <!--            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">-->
-    <!--                <ul class="navbar-nav float-end">-->
-    <!--                    <li class="nav-item dropdown">-->
-    <!--                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
-    <!--                            <img th:src="@{../assets/images/husc_logo.png}" alt="user" class="rounded-circle" width="31">-->
-    <!--                        </a>-->
-    <!--                        <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">-->
-    <!--                            <a class="dropdown-item" href="/homepage"><i class="ti-user m-r-5 m-l-5"></i>Student homepage</a>-->
-    <!--                        </ul>-->
-    <!--                    </li>-->
-    <!--                    &lt;!&ndash; ============================================================== &ndash;&gt;-->
-    <!--                    &lt;!&ndash; User profile and search &ndash;&gt;-->
-    <!--                    &lt;!&ndash; ============================================================== &ndash;&gt;-->
-    <!--                </ul>-->
-    <!--            </div>-->
+    		<div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                <ul class="navbar-nav float-start me-auto">
+   
+                </ul>
+                <div class="dropdown show navbar-nav float-end">
+				  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Menu
+				  </a>
+				
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				    <a class="dropdown-item" href="/home/">Tra cứu</a>
+				    <a class="dropdown-item" href="#">Đăng xuất</a>
+				  </div>
+            	</div>
+            	<ul class="navbar-nav float-end">
+   
+                </ul>
+               </div>
             </nav>
         </header>
         <aside class="left-sidebar" data-sidebarbg="skin6">

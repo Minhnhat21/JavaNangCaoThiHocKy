@@ -99,23 +99,24 @@
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
-                    <ul class="navbar-nav float-end">
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="/images/husc_logo.png" alt="user" class="rounded-circle" width="31">
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/homepage"><i class="ti-user m-r-5 m-l-5"></i>Student homepage</a>
-                        
-                            </ul>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                    </ul>
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+		                <ul class="navbar-nav float-start me-auto">
+		   
+		                </ul>
+		                <div class="dropdown show navbar-nav float-end">
+						  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Menu
+						  </a>
+						
+						  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						    <a class="dropdown-item" href="/home/">Tra cứu</a>
+						    <a class="dropdown-item" href="#">Đăng xuất</a>
+						  </div>
+		            	</div>
+		            	<ul class="navbar-nav float-end">
+		   
+		                </ul>
+               		</div>
                 </div>
             </nav>
         </header>
@@ -132,12 +133,12 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/admin" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
-        
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/table" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
-                                    class="hide-menu">Table</span></a></li>
+                                                 href="/admin/home" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                            class="hide-menu">Dashboard</span></a></li>
+
+                    	<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                                 href="/admin/table" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
+                            class="hide-menu">Table</span></a></li>
                     </ul>
 
                 </nav>
@@ -288,8 +289,7 @@
                 </div>
                 <div class="modal-body">
                 <div class="form-row">
-                	<h5 class="mb-4">Lý lịch học sinh</h5>
-                	<br>
+                	
 	                <div class="form-row">
 	                    <div class="form-group col-md-6">
 	                        <label for="addCitizenIdentity" class="col-form-label">Số căn cước</label>

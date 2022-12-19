@@ -30,9 +30,12 @@ public class StudentController {
 	@GetMapping(path = "/home")
 	public String initPage(Model model, HttpSession session) {
 		User user = (User) session.getAttribute("User");
-		Student student = studentService.findStudentByUserId(user.getId());
-		model.addAttribute("student",student);
-		return "student-page";
+		if(user != null) {
+			Student student = studentService.findStudentByUserId(user.getId());
+			model.addAttribute("student",student);	
+			return "student-page";
+		} else
+			return "redirect:/login/";
 	}
 	
 //	@RequestMapping(value = {"/student/home/score" }, method = RequestMethod.GET)
