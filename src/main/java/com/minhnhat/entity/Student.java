@@ -97,9 +97,28 @@ public class Student{
         this.priorityPoint = priorityPoint;
     }
     
+	
     
 
-    public Student(@NotNull Long citizenIdentity, @NotBlank String fullName, @Email String email, LocalDate dob,
+    public Student(Long citizenIdentity,String fullName,String email, LocalDate dob,
+			boolean gender, String address, String birthPlace, String national, String religion, String phoneNumber,
+			float priorityPoint) {
+		super();
+		this.citizenIdentity = citizenIdentity;
+		this.fullName = fullName;
+		this.email = email;
+		this.dob = dob;
+		this.gender = gender;
+		this.address = address;
+		this.birthPlace = birthPlace;
+		this.national = national;
+		this.religion = religion;
+		this.phoneNumber = phoneNumber;
+		this.priorityPoint = priorityPoint;
+	}
+
+
+	public Student(@NotNull Long citizenIdentity, @NotBlank String fullName, @Email String email, LocalDate dob,
 			boolean gender, String address, String birthPlace, String national, String religion, String phoneNumber,
 			@NotNull float priorityPoint, float totalScore, boolean isPass, MajorsRegister majorsRegister,
 			List<Score> scores, User user) {

@@ -96,6 +96,12 @@
 		    <groupId>org.springframework.session</groupId>
 		    <artifactId>spring-session-data-redis</artifactId>
   		</dependency>
+  		
+  		<dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.8</version>
+        </dependency>
         
 	</dependencies>
 

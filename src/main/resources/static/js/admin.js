@@ -122,8 +122,10 @@ function getAll(page) {
                     getAll(page-1);
                 }
             });
+
         }
     })
+    /*window.location.replace("/admin/table")*/
 }
 //pagination
 
